@@ -18,6 +18,7 @@ import asyncio
 import concurrent.futures
 import json
 import logging
+import re
 import traceback
 from typing import Dict, Any
 
@@ -144,6 +145,10 @@ def run_tool_agent(query: str) -> Dict[str, Any]:
         "query": query,
     }).strip()
     log.debug("LLM selected: %s", selection_raw)
+
+    match = re.search(r'\{.*\}', selection_raw, re.DOTALL)
+    if match:
+        selection_raw = match.group(0)
 
     try:
         selection = json.loads(selection_raw)
