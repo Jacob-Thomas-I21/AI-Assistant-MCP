@@ -7,8 +7,8 @@ A multi-agent assistant that answers questions from company documents, structure
 ## Setup
 
 ```bash
-git clone https://github.com/your-username/ai-assistant-assessment
-cd ai-assistant-assessment
+git clone https://github.com/Jacob-Thomas-I21/AI-Assistant-MCP
+cd ai-assistant
 
 py -3.12 -m venv venv
 venv\Scripts\activate
