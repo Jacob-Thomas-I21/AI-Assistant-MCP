@@ -1,0 +1,30 @@
+# Core LLM & LangChain
+langchain==0.3.25
+langchain-openai==0.3.19
+langchain-community==0.3.24
+langchain-chroma==0.2.6
+chromadb==1.0.20
+# MCP Server
+mcp==1.9.4
+
+# PDF loading
+pypdf==5.1.0
+
+# Streamlit UI
+streamlit==1.45.1
+plotly==6.0.1
+
+# Data
+pandas==2.2.3
+numpy==2.2.5
+
+# HTTP (for MCP tools)
+httpx==0.28.1
+requests==2.32.3
+
+# Environment
+python-dotenv==1.1.0
+
+# Utilities
+pydantic==2.11.5
+rank-bm25==0.2.2

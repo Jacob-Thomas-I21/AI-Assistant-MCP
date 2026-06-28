@@ -1,0 +1,16 @@
+Branch,City,Region,Revenue,Orders,Returns,CustomerSatisfaction,EmployeeCount
+NY,New York,North America,152000,1820,95,4.5,42
+TX,Austin,North America,134000,1650,112,4.2,38
+CA,San Francisco,North America,198000,2310,78,4.7,55
+IL,Chicago,North America,118000,1420,134,4.0,31
+FL,Miami,North America,109000,1280,101,4.1,29
+WA,Seattle,North America,143000,1710,88,4.4,40
+GA,Atlanta,North America,97000,1150,120,3.9,26
+MA,Boston,North America,127000,1530,93,4.3,35
+AZ,Phoenix,North America,88000,1060,145,3.8,24
+CO,Denver,North America,103000,1240,108,4.2,28
+MN,Minneapolis,North America,79000,950,119,3.9,22
+OH,Columbus,North America,91000,1090,127,4.0,25
+NC,Charlotte,North America,86000,1030,133,3.8,23
+MI,Detroit,North America,73000,880,141,3.7,21
+PA,Philadelphia,North America,115000,1380,99,4.1,32

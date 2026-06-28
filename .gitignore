@@ -1,0 +1,30 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env
+.history/
+
+
+# ChromaDB local storage
+data/chroma_db/
+
+# Feedback database
+feedback/feedback.db
+
+# Evaluation results
+evaluation/results/
+
+# Streamlit cache
+.streamlit/
+
+# IDE
+.vscode/
+.idea/
+*.swp
