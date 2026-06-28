@@ -8,21 +8,35 @@ A multi-agent assistant that answers questions from company documents, structure
 
 ```bash
 git clone https://github.com/Jacob-Thomas-I21/AI-Assistant-MCP
-cd ai-assistant
+cd AI-Assistant-MCP
 
 py -3.12 -m venv venv
 venv\Scripts\activate
 
 pip install -r requirements.txt
 
-# Add your OPENROUTER_API_KEY to .env
 cp .env.example .env
+# Set OPENROUTER_API_KEY (and LLM_PROVIDER / PROD_MODEL if you want to change them)
 
 streamlit run app.py
 
 # Optional: run the evaluation suite
 python -m evaluation.test_suite
 ```
+
+---
+
+## LLM Configuration
+
+Provider and model are controlled entirely through `.env` — no code changes needed to switch.
+
+```
+LLM_PROVIDER=openrouter       # openrouter | openai | anthropic
+PROD_MODEL=anthropic/claude-sonnet-4.5   # used by all agents
+DEV_MODEL=openai/gpt-4o-mini            # available for lightweight calls
+```
+
+OpenRouter is the default because a single key gives access to models from Anthropic, OpenAI, and others. If you want to use a provider directly, set `LLM_PROVIDER=openai` or `LLM_PROVIDER=anthropic` and add the corresponding `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`. Model name format changes per provider — the `.env.example` has examples for each.
 
 ---
 
@@ -77,7 +91,7 @@ AI-Assistant-Assessment/
 │   └── tool_agent.py         # MCP client
 |
 ├── core/
-│   ├── llm.py                # OpenRouter wrapper
+│   ├── llm.py                # Multi-provider LLM wrapper (openrouter/openai/anthropic)
 │   ├── embeddings.py         # Embedding model setup
 │   └── vectorstore.py        # ChromaDB ingestion + search
 |
@@ -224,7 +238,9 @@ Conversation memory is the most immediately useful addition — the current sing
 | Component | Technology |
 |---|---|
 | LLM framework | LangChain |
-| LLM provider | OpenRouter (GPT-4o-mini) |
+| LLM provider | OpenRouter (default) — also supports direct OpenAI and Anthropic |
+| Production model | claude-sonnet-4.5 |
+| Dev/test model | gpt-4o-mini |
 | Embeddings | openai/text-embedding-3-small |
 | Vector store | ChromaDB |
 | Tool protocol | MCP (Model Context Protocol) |
